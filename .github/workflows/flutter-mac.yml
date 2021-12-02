@@ -29,10 +29,9 @@ jobs:
 
     - run: export APP_STORE_CONNECT_ISSUER_ID=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
     - run: export APP_STORE_CONNECT_KEY_IDENTIFIER=${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
-    - run: export APP_STORE_CONNECT_PRIVATE_KEY=${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
 
     - run: keychain initialize
-    - run: app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --platform IOS --type IOS_APP_ADHOC --certificate-key=${{ secrets.CERT_KEY }} --create
+    - run: app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --private-key=${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }} --platform IOS --type IOS_APP_ADHOC --certificate-key=${{ secrets.CERT_KEY }} --create
     - run: keychain add-certificates
     - run: xcode-project use-profiles
     - run: flutter packages pub get
