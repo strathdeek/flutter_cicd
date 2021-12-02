@@ -36,7 +36,7 @@ jobs:
     - run: find . -name "Podfile" -execdir pod install \;
 
     - run: flutter pub get
-    - run: flutter build ios --release
+    - run: flutter build ipa --release --export-options-plist=$HOME/export_options.plist
     
     - run: appcenter login --token ${{secrets.APP_CENTER_TOKEN}}
     - run: appcenter distribute release -f $(find $(pwd) -name "*.ipa") \
