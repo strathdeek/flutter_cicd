@@ -26,16 +26,15 @@ jobs:
       with:
         flutter-version: '2.5.0'
     
-    - run: echo ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }} >> privatekey.p8
+    - run: openssl base64 -d -in ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }} -out authkey.p8
     
-    - run: export APP_STORE_CONNECT_PRIVATE_KEY=`cat privatekey.p8`
     - run: export APP_STORE_CONNECT_ISSUER_ID=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
     - run: export APP_STORE_CONNECT_KEY_IDENTIFIER=${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
     
     - run: pip3 install codemagic-cli-tools
     
     - run: keychain initialize
-    - run: app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --private-key=${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }} --platform IOS --type IOS_APP_ADHOC --certificate-key=${{ secrets.CERT_KEY }} --create
+    - run: app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --private-key=authkey.p8 --platform IOS --type IOS_APP_ADHOC --certificate-key=${{ secrets.CERT_KEY }} --create
     - run: keychain add-certificates
     - run: xcode-project use-profiles
     - run: flutter packages pub get
