@@ -26,7 +26,7 @@ jobs:
       with:
         flutter-version: '2.5.0'
     
-    - run: openssl base64 -d -in ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }} -out authkey.p8
+    - run: openssl base64 -d <<< ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }} -out authkey.p8
     
     - run: export APP_STORE_CONNECT_ISSUER_ID=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
     - run: export APP_STORE_CONNECT_KEY_IDENTIFIER=${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
