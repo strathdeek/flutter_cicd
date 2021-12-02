@@ -33,7 +33,7 @@ jobs:
     - run: pip3 install codemagic-cli-tools
     
     - run: keychain initialize
-    - run: app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --private-key=@file:AuthKey_YGLT83UMQ9.p8.p8 --platform IOS --type IOS_APP_ADHOC --certificate-key=@file:cert_key --create
+    - run: app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --private-key=@file:AuthKey_YGLT83UMQ9.p8 --platform IOS --type IOS_APP_ADHOC --certificate-key=@file:cert_key --create
     - run: keychain add-certificates
     - run: xcode-project use-profiles
     - run: flutter packages pub get
