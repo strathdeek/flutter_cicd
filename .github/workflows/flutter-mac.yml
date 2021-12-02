@@ -39,6 +39,4 @@ jobs:
     - run: flutter build ipa --release --export-options-plist=$HOME/export_options.plist
     
     - run: appcenter login --token ${{secrets.APP_CENTER_TOKEN}}
-    - run: appcenter distribute release -f $(find $(pwd) -name "*.ipa") \
-                                       -g Collaborators \
-                                       --app k-strathdee/Flutter-CICD
+    - run: appcenter distribute release -f $(find $(pwd) -name "*.ipa") -g Collaborators --app k-strathdee/Flutter-CICD
