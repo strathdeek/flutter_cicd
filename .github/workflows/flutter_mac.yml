@@ -6,7 +6,7 @@ on:
     paths:
       - '.github/workflows/dev-mac.yml' 
       - 'src/**'
-      
+
   pull_request:
     branches: [ main ]
 
@@ -23,7 +23,7 @@ jobs:
         java-version: '11'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '2.6.0'
+        flutter-version: '2.5.0'
     
     - run: pip3 install codemagic-cli-tools
 
