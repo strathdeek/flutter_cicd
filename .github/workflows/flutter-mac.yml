@@ -26,6 +26,7 @@ jobs:
       with:
         flutter-version: '2.5.0'
     
+    - run: pwd
     - run: export APP_STORE_CONNECT_ISSUER_ID=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
     - run: export APP_STORE_CONNECT_KEY_IDENTIFIER=${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }}
     
