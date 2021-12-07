@@ -34,6 +34,12 @@ jobs:
         app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --private-key="${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}" --platform IOS --type IOS_APP_ADHOC --certificate-key="${{ secrets.CERT_KEY }}" --issuer-id=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }} --key-id=${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }} --create
         keychain add-certificates
         xcode-project use-profiles
+    - name: Setup Android Code Signing Resources
+      id: decode_keystore
+      uses: timheuer/base64-to-file@v1
+      with:
+        fileName: 'keystore/your_signing_keystore.jks'
+        encodedString: ${{ secrets.KEYSTORE }}
 
     - name: Fetch pub packages
       shell: bash
@@ -42,11 +48,23 @@ jobs:
         find . -name "Podfile" -execdir pod install \;
         flutter pub get
 
+    - name: Build Android Release
+      shell: bash
+      env:
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+      run: |
+        flutter build appbundle --release
+
     - name: Build ios release
       shell: bash
       run: |
         flutter build ipa --release --export-options-plist=$HOME/export_options.plist
     
-
-    - run: appcenter login --token ${{secrets.APP_CENTER_TOKEN}}
-    - run: appcenter distribute release -f $(find $(pwd) -name "*.ipa") -g Collaborators --app k-strathdee/Flutter-CICD
+    - name: Distribute iOS & Android
+      shell: bash
+      run: |
+        appcenter login --token ${{secrets.APP_CENTER_TOKEN}}
+        appcenter distribute release -f $(find $(pwd) -name "*.ipa") -g Collaborators --app k-strathdee/Flutter-CICD
+        appcenter distribute release -f $(find $(pwd) -name "*.aab") -g Collaborators --app k-strathdee/Flutter-CICD-Android
