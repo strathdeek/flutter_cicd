@@ -34,12 +34,12 @@ jobs:
         app-store-connect fetch-signing-files $(xcode-project detect-bundle-id) --private-key="${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}" --platform IOS --type IOS_APP_ADHOC --certificate-key="${{ secrets.CERT_KEY }}" --issuer-id=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }} --key-id=${{ secrets.APP_STORE_CONNECT_KEY_IDENTIFIER }} --create
         keychain add-certificates
         xcode-project use-profiles
+
     - name: Setup Android Code Signing Resources
-      id: decode_keystore
-      uses: timheuer/base64-to-file@v1
-      with:
-        fileName: 'keystore/upload-keystore.jks'
-        encodedString: ${{ secrets.KEYSTORE }}
+      shell: bash
+      run: |
+        mkdir android/app/keystore
+        echo ${{ secrets.KEYSTORE }} | base64 -di > android/app/keystore/keystore/upload-keystore.jks
 
     - name: Fetch pub packages
       shell: bash
