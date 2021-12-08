@@ -39,7 +39,7 @@ jobs:
       shell: bash
       run: |
         mkdir android/app/keystore
-        echo ${{ secrets.KEYSTORE }} | base64 -di > android/app/keystore/keystore/upload-keystore.jks
+        echo ${{ secrets.KEYSTORE }} | base64 -di > android/app/keystore/upload-keystore.jks
 
     - name: Fetch pub packages
       shell: bash
