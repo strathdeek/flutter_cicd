@@ -55,7 +55,7 @@ jobs:
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
       run: |
-        flutter build appbundle --release
+        flutter build apk --release
 
     - name: Build ios release
       shell: bash
@@ -67,4 +67,4 @@ jobs:
       run: |
         appcenter login --token ${{secrets.APP_CENTER_TOKEN}}
         appcenter distribute release -f $(find $(pwd) -name "*.ipa") -g Collaborators --app k-strathdee/Flutter-CICD
-        appcenter distribute release -f build/app/outputs/bundle/release/app-release.aab -g Collaborators --app k-strathdee/Flutter-CICD-Android
+        appcenter distribute release -f build/app/outputs/flutter-apk/app-release.apk  -g Collaborators --app k-strathdee/Flutter-CICD-Android
