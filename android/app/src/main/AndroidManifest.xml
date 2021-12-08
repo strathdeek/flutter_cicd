@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_cicd">
+    package="com.strathdeek.flutter_cicd">
    <application
         android:label="flutter_cicd"
-        android:name="${applicationName}"
+        android:name="flutter_cicd"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
