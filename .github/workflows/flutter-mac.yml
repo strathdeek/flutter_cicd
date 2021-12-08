@@ -67,4 +67,4 @@ jobs:
       run: |
         appcenter login --token ${{secrets.APP_CENTER_TOKEN}}
         appcenter distribute release -f $(find $(pwd) -name "*.ipa") -g Collaborators --app k-strathdee/Flutter-CICD
-        appcenter distribute release -f $(find $(pwd) -name "*.aab") -g Collaborators --app k-strathdee/Flutter-CICD-Android
+        appcenter distribute release -f build/app/outputs/bundle/release/app-release.aab -g Collaborators --app k-strathdee/Flutter-CICD-Android
