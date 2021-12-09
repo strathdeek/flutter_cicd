@@ -21,7 +21,7 @@ jobs:
       with:
         channel: dev
     - run: flutter config --enable-windows-uwp-desktop
-    - run: flutter build winuwp
+    - run: flutter build winuwp -v
 
     - name: Distribute Windows UWP
       shell: bash
