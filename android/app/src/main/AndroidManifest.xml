@@ -2,7 +2,6 @@
     package="com.strathdeek.flutter_cicd">
    <application
         android:label="flutter_cicd"
-        android:name="flutter_cicd"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
