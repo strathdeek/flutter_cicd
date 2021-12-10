@@ -26,5 +26,6 @@ jobs:
     - name: Distribute Windows UWP
       shell: bash
       run: |
+        npm install -g appcenter-cli
         appcenter login --token ${{secrets.APP_CENTER_TOKEN}}
-        appcenter distribute release -f $(find $(pwd) -name "*.ipa") -g Collaborators --app k-strathdee/Flutter-CICD-UWP
+        appcenter distribute release -f $(find $(pwd) -name "*.msix") -g Collaborators --app k-strathdee/Flutter-CICD-UWP
