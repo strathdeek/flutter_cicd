@@ -2,6 +2,8 @@
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace AppiumTest
 {
@@ -9,7 +11,7 @@ namespace AppiumTest
     {
         // Note: append /wd/hub to the URL if you're directing the test at Appium
         private const string WindowsApplicationDriverUrl = "http://127.0.0.1:4723";
-        private const string CounterAppPath = @"C:\Users\kevin\source\repos\flutter_cicd\build\windows\runner\Release\flutter_cicd.exe";
+        //private const string CounterAppPath = @"C:\Users\kevin\source\repos\flutter_cicd\build\windows\runner\Release\flutter_cicd.exe";
 
         protected static WindowsDriver<WindowsElement> session;
 
@@ -20,7 +22,10 @@ namespace AppiumTest
             {
                 // Create a new session to bring up an instance of the Calculator application
                 // Note: Multiple calculator windows (instances) share the same process Id
-
+                string cur = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                string rootDir = Path.Combine(cur, @"..\..\..\");
+                string CounterAppPath = Path.Combine(Assembly.GetExecutingAssembly().Location, "..", "..", "..", "..", "..", "..", "build", "windows", "runner", "Release", "flutter_cicd.exe");
+                Console.WriteLine(CounterAppPath);
                 AppiumOptions options = new AppiumOptions();
                 options.AddAdditionalCapability("app", CounterAppPath);
                 options.AddAdditionalCapability("deviceName", "WindowsPC");

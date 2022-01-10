@@ -53,7 +53,7 @@ namespace AppiumTest
         private string GetScreenShotDirectory()
         {
             string cur = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string screenshotDir = Path.Combine(cur, @"..\..\..\", "Screenshots");
+            string screenshotDir = Path.Combine(cur, "..","..","..", "Screenshots");
             SetAccessRule(screenshotDir);
             return screenshotDir;
         }
