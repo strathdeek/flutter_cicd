@@ -34,4 +34,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: screenshot
-        path: AppiumTest/Screenshots/
+        path: AppiumTest/Screenshots/screenshot.png
