@@ -12,16 +12,8 @@ namespace AppiumTest
     public class CounterTest : CounterSession
     {
         [TestMethod]
-        public void CounterTest1()
+        public void ScreenshotTest()
         {
-            var ele0 = session.FindElementByName("0");
-            Assert.IsNotNull(ele0);
-            var counter = session.FindElementByName("Increment");
-            Assert.IsNotNull(counter);
-            counter.Click();
-            var ele1 = session.FindElementByName("1") ;
-            Assert.IsNotNull(ele1);
-            var screenshot = session.GetScreenshot();
             TakeScreenshot();
         }
 
@@ -44,10 +36,6 @@ namespace AppiumTest
 
             // This succeeds because it's saving to a file...
             ss.SaveAsFile(Path.Combine(GetScreenShotDirectory(), "screenshot.png"), ScreenshotImageFormat.Png);
-
-            // System.UnauthorizedAccessException because it's trying to overwrite a directory...
-            //ss.SaveAsFile(GetScreenShotDirectory(), ScreenshotImageFormat.Png);
-
         }
 
         private string GetScreenShotDirectory()
