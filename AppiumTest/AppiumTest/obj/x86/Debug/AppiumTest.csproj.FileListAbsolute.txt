@@ -1,3 +1,9 @@
+C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.g.i.cs
+C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.g.cs
+C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.xaml
+C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.xbf
+C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\bin\x86\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\bin\x86\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\bin\x86\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -24,12 +30,6 @@ C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\bin\x86\Debug\Web
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\bin\x86\Debug\WebDriver.dll
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\bin\x86\Debug\System.Drawing.Common.dll
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\bin\x86\Debug\Microsoft.UI.Xaml.Markup.winmd
-C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.g.i.cs
-C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.g.cs
-C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\XamlTypeInfo.g.cs
-C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.xaml
-C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\UnitTestApp.xbf
-C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\AppiumTest.csproj.CoreCompileInputs.cache
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\AppiumTest.csproj.CopyComplete
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\obj\x86\Debug\AppiumTest.exe
