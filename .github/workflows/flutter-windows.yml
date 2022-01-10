@@ -17,13 +17,14 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
-    - run: flutter config --enable-windows-desktop
-    - run: flutter build windows
-
     - name: Launch winappdriver
       shell: pwsh
       run: | 
         Start-Process -FilePath "C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe"
+    - run: flutter config --enable-windows-desktop
+    - run: flutter build windows
+
+
 
     - name: Build
       run: dotnet build AppiumTest
