@@ -43,7 +43,7 @@ namespace AppiumTest
             Screenshot ss = session.GetScreenshot();
 
             // This succeeds because it's saving to a file...
-            ss.SaveAsFile(Path.Combine(GetScreenShotDirectory(), "Hello, world!.png"), ScreenshotImageFormat.Png);
+            ss.SaveAsFile(Path.Combine(GetScreenShotDirectory(), "screenshot.png"), ScreenshotImageFormat.Png);
 
             // System.UnauthorizedAccessException because it's trying to overwrite a directory...
             //ss.SaveAsFile(GetScreenShotDirectory(), ScreenshotImageFormat.Png);

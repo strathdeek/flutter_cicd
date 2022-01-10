@@ -1,1 +1,0 @@
-C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\AppiumTest\AppiumTest.csproj;x86
