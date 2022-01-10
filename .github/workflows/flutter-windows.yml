@@ -25,8 +25,6 @@ jobs:
       shell: pwsh
       run: Start-Process -FilePath "C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe" -WindowStyle Hidden
 
-    - name: Install dependencies
-      run: dotnet restore
     - name: Build
       run: dotnet build AppiumTest
     - name: Test
