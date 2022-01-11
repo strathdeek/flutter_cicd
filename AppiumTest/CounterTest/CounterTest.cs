@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Security.AccessControl;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 
@@ -12,8 +13,9 @@ namespace AppiumTest
     public class CounterTest : CounterSession
     {
         [TestMethod]
-        public void ScreenshotTest()
+        public async Task ScreenshotTest()
         {
+            await Task.Delay(1000);
             TakeScreenshot();
         }
 

@@ -10,11 +10,8 @@ void main() {
     // Build the app.
     app.main();
 
-    // This is required prior to taking the screenshot (Android only).
-    await binding.convertFlutterSurfaceToImage();
-
     // Trigger a frame.
     await tester.pumpAndSettle();
-    await binding.takeScreenshot('screenshot-1');
+    expect(find.text('0'), findsOneWidget);
   });
 }

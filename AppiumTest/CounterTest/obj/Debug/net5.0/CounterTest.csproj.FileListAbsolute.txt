@@ -106,3 +106,4 @@ C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\CounterTest\obj\Debug\net5.0
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\CounterTest\obj\Debug\net5.0\ref\CounterTest.dll
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\CounterTest\obj\Debug\net5.0\CounterTest.pdb
 C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\CounterTest\obj\Debug\net5.0\CounterTest.genruntimeconfig.cache
+C:\Users\kevin\source\repos\flutter_cicd\AppiumTest\CounterTest\obj\Debug\net5.0\CounterTest.csproj.AssemblyReference.cache
