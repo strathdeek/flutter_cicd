@@ -17,10 +17,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Launch winappdriver
-      shell: pwsh
-      run: | 
-        Start-Process -FilePath "C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe"
+    - uses: subosito/flutter-action@v1
+      with:
+        flutter-version: '2.5.0'
     - run: flutter config --enable-windows-desktop
     - run: flutter test integration_test/counter_test.dart -d windows
     - run: flutter build windows
